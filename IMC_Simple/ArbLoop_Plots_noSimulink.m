@@ -6,7 +6,7 @@ clear all
 addpath('../Support_Functions/')
 %% Load and Initialize the ArbLoop Model
 % Load the model.  The ArbLoop object created has the variable name loop.
-ArbLoop_IMC_Simple
+loop = ArbLoop_IMC_Simple
 
 % Check that all of its blocks are connected (displays to the workspace)
 checkLoop(loop)
@@ -104,6 +104,8 @@ ylim([-180 180])
 
 orient landscape 
 print -dpdf Open_Loop_TFs.pdf
+
+save('IMC_TFs.mat', 'arb', 'f')
 
 %% Get Closed Loop TFs
 
